@@ -1,5 +1,15 @@
 # 📘 学習 記録 アプリ
 
+# Learning Tracker
+
+![MIT License](https://img.shields.io/badge/license-MIT-green.svg)
+![HTML](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?logo=chartdotjs&logoColor=white)
+
+
 学習時間を記録し、進捗を可視化するシンプルなアプリケーションです。
 
 Python をバックエンドに、HTML/CSS/JavaScript をフロントエンドに使用し、Chart.js を活用して学習データをグラフで表示します。
