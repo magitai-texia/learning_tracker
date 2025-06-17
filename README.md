@@ -63,20 +63,6 @@ python app.py
 
 ブラウザで http://127.0.0.1:5000 にアクセスすると、アプリケーションが表示されます。
 
-### 📄 ファイル構成
-
-```pgsql
-learning_tracker/
-├── app.py
-├── data.json
-├── requirements.txt
-├── static/
-│   ├── style.css
-│   └── script.js
-└── templates/
-    └── index.html
-```
-
 ### 📝 ライセンス
 このプロジェクトは MIT ライセンスの下で公開されています。詳細は LICENSE ファイルをご覧ください。
 
