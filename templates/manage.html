@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学習記録 管理画面</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>学習記録 管理画面</h1>
+    <a href="/">トップに戻る</a>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>タイトル</th>
+                <th>スキル</th>
+                <th>時間(分)</th>
+                <th>メモ</th>
+                <th>日付</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for log in logs %}
+            <tr>
+                <td>{{ log.id }}</td>
+                <td>{{ log.title }}</td>
+                <td>{{ log.skill }}</td>
+                <td>{{ log.time }}</td>
+                <td>{{ log.memo }}</td>
+                <td>{{ log.date }}</td>
+                <td>
+                    <a class="link-button" href="/edit/{{ log.id }}">編集</a> |
+                    <form class="delete-form" action="/delete/{{ log.id }}" method="post" onsubmit="return confirm('削除してもよろしいですか？');" style="display:inline;">
+                        <button class="link-button" type="submit">削除</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

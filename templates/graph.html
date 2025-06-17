@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>週間学習時間グラフ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Chart.js（グラフライブラリ）をCDNで読み込む -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>週間学習時間（棒グラフ）</h1>
+
+    <!-- グラフを表示する場所 -->
+    <canvas id="studyChart" width="600" height="400"></canvas>
+
+    <script>
+        // Flaskから送られてきた日付と勉強時間を使ってグラフを描く
+        const ctx = document.getElementById('studyChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'bar',  // 棒グラフ
+            data: {
+                labels: {{ dates | tojson }},   // x軸のラベル（日付）
+                datasets: [{
+                    label: '学習時間（分）',
+                    data: {{ totals | tojson }}, // y軸の値（時間）
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)',  // 青色
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true  // y軸を0から始める
+                    }
+                }
+            }
+        });
+    </script>
+
+    <p><a href="/">▶ ホームに戻る</a></p>
+</body>
+</html>

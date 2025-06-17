@@ -1,0 +1,230 @@
+body {
+  font-family: "Yu Gothic", sans-serif;
+  margin: 40px;
+  color: #333;
+  background: linear-gradient(180deg, #e0f7fa, #f1f8e9);
+}
+
+h1, h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+/* コンテナ全体を画面中央に寄せる */
+.container {
+  max-width: 700px;  /* 幅はお好みで調整OK */
+  margin: 0 auto;    /* 左右中央寄せ */
+  padding: 20px;
+  text-align: center; /* 中のテキスト・リンクを中央揃え */
+}
+
+/* ログのリストは幅を小さめにして中央に */
+.container ul {
+  list-style-position: inside;
+  padding-left: 0;
+  margin: 0 auto 20px;        /* 中央に配置 */
+  text-align: center;         /* 各リストアイテムのテキストも中央に */
+  max-width: 600px;           /* 読みやすい幅に制限 */
+}
+
+/* リンクの余白を調整 */
+.container nav p {
+  margin: 8px 0;
+}
+
+.container nav a {
+  color: #3498db;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.container nav a:hover {
+  text-decoration: underline;
+}
+
+/* すでにあるフォーム関連CSS（再掲してもOK） */
+form {
+    max-width: 600px;
+    margin: 0 auto 40px; /* 下に余白を追加 */
+    padding: 24px; /* padding増やしてゆとりを */
+    background-color: #fff;
+    border-radius: 12px; /* 少し丸みを強く */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1); /* 影を大きく */
+    width: 100%;
+}
+
+input, select, textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #1abc9c; /* 明るいティール */
+    outline: none;
+    box-shadow: 0 0 8px rgba(26, 188, 156, 0.6);
+}
+
+button, input[type="submit"] {
+    background-color: #1abc9c; /* ティール */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #16a085; /* 濃いティール */
+}
+
+button.link-button:hover {
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a, .link-button {
+    color: #2980b9; /* 濃いブルー */
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:hover, .link-button:hover {
+    color: #1f618d;
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* 削除や編集などのリンク風ボタン共通スタイル */
+.link-button {
+    background: none;
+    border: none;
+    color: #3498db;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+/* 削除ボタン用のフォームはボックス表示を無効化 */
+form.delete-form {
+    all: unset;
+    display: inline;
+}
+
+/* ログ全体の一覧 */
+.log-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;  /* 中央揃え */
+  margin-top: 20px;
+}
+
+/* 1件ずつのログカード */
+.log-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px 20px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* グラデーション背景付きログカード */
+.log-card.colorful {
+  background: linear-gradient(135deg, #f0f8ff, #e0f0ff);
+  border: 1px solid #d0e6ff;
+  border-radius: 10px;
+  padding: 15px 20px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+}
+
+.log-card.colorful:hover {
+  transform: scale(1.02);
+}
+
+/* タイトル + スキル名 */
+.log-title {
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* スキル装飾 */
+.log-skill {
+  background-color: #3498db;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.85em;
+}
+
+/* 時間・メモ */
+.log-time {
+  color: #2c3e50;
+  margin-bottom: 5px;
+  font-size: 0.95em;
+}
+
+.log-memo {
+  color: #555;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        margin: 20px;
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    form {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .container ul {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ホーム</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>今日の学習まとめ</h1>
+    <p>今日の合計学習時間: {{ total_time }} 分</p>
+
+    <h2>今日のログ</h2>
+    <div class="log-list">
+        {% for log in today_logs %}
+            <div class="log-card colorful">
+            <div class="log-title"> 📔: {{ log.title }} <span class="log-skill"> 🛠: {{ log.skill }}</span></div>
+            <div class="log-time">⏱️ {{ log.time }}分</div>
+            <div class="log-memo">💬 {{ log.memo }}</div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <nav>
+      <p><a href="/log">▶ 学習ログ記録へ</a></p>
+      <p><a href="/graph">▶ グラフを見る</a></p>
+      <p><a href="/manage">▶ 管理画面へ</a></p>
+    </nav>
+  </div>
+</body>
+</html>

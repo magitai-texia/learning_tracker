@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スキル登録</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>スキル登録</h1>
+    <form method="POST">
+        スキル名: <input type="text" name="name" required><br>
+        累計時間（分）: <input type="number" name="time" required><br>
+        <button type="submit">登録</button>
+    </form>
+
+    <h2>登録済みスキル</h2>
+    <ul>
+        {% for skill in skills %}
+            <li>{{ skill.name }} - {{ skill.time }} 分</li>
+        {% endfor %}
+    </ul>
+
+    <p><a href="/">▶ ホームに戻る</a></p>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+{
+  "skills": [
+    {
+      "name": "aaa",
+      "time": 5
+    },
+    {
+      "name": "ddd",
+      "time": 7
+    },
+    {
+      "name": "aaa",
+      "time": 5
+    },
+    {
+      "name": "ddd",
+      "time": 15
+    }
+  ],
+  "logs": [
+    {
+      "title": "あああ",
+      "skill": "java",
+      "time": "15",
+      "memo": "demo",
+      "date": "2025-06-13",
+      "id": 1
+    },
+    {
+      "title": "宮城",
+      "skill": "p",
+      "time": "10",
+      "memo": "ggg",
+      "date": "2025-06-13",
+      "id": 2
+    },
+    {
+      "title": "ask",
+      "skill": "task",
+      "time": "5",
+      "memo": "mask",
+      "date": "2025-06-13",
+      "id": 3
+    },
+    {
+      "title": "job",
+      "skill": "demo",
+      "time": "12",
+      "memo": "free",
+      "date": "2025-06-13",
+      "id": 4
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学習記録 編集</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>学習記録 編集</h1>
+    <form method="post">
+        <label>タイトル:<br />
+            <input type="text" name="title" value="{{ log.title }}" required />
+        </label><br /><br />
+        <label>スキル:<br />
+            <input type="text" name="skill" value="{{ log.skill }}" required />
+        </label><br /><br />
+        <label>時間(分):<br />
+            <input type="number" name="time" value="{{ log.time }}" required min="1" />
+        </label><br /><br />
+        <label>メモ:<br />
+            <textarea name="memo">{{ log.memo }}</textarea>
+        </label><br /><br />
+        <label>日付:<br />
+            <input type="date" name="date" value="{{ log.date }}" required />
+        </label><br /><br />
+        <button type="submit">保存</button>
+    </form>
+    <br />
+    <a href="/manage">管理画面に戻る</a>
+</body>
+</html>
